@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumaiya Ali | Full-Stack Web Developer</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkBg: '#08060f',
+            cardDark: '#120d1f',
+            purpleGlow: '#a855f7',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #08060f;
+      color: #e2e8f0;
+    }
+
+    .serif-heading {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glass-card {
+      background: rgba(18, 13, 31, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(168, 85, 247, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Active state for sidebar nav */
+    .nav-num.active {
+      background-color: #a855f7 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #08060f;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #261b42;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a855f7;
+    }
+  </style>
+</head>
+
+<body class="relative min-h-screen selection:bg-purple-500 selection:text-white">
+
+  <!-- Background Grid Overlay -->
+  <div
+    class="fixed inset-0 bg-[linear-gradient(to_right,#150c2a_1px,transparent_1px),linear-gradient(to_bottom,#150c2a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 pointer-events-none z-0">
+  </div>
+
+  <!-- Left Sidebar Scroll Navigation -->
+  <aside class="fixed left-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-4 z-40">
+    <div
+      class="p-2.5 rounded-full border border-purple-950 bg-cardDark/90 backdrop-blur-md flex flex-col gap-3 text-xs font-mono font-bold text-slate-500">
+      <a href="#home" id="nav-01"
+        class="nav-num w-9 h-9 rounded-full flex items-center justify-center transition-all hover:text-purple-400 active">01</a>
+      <a href="#about" id="nav-02"
+        class="nav-num w-9 h-9 rounded-full flex items-center justify-center transition-all hover:text-purple-400">02</a>
+      <a href="#skills" id="nav-03"
+        class="nav-num w-9 h-9 rounded-full flex items-center justify-center transition-all hover:text-purple-400">03</a>
+      <a href="#projects" id="nav-04"
+        class="nav-num w-9 h-9 rounded-full flex items-center justify-center transition-all hover:text-purple-400">04</a>
+      <a href="#education" id="nav-05"
+        class="nav-num w-9 h-9 rounded-full flex items-center justify-center transition-all hover:text-purple-400">05</a>
+      <a href="#contact" id="nav-06"
+        class="nav-num w-9 h-9 rounded-full flex items-center justify-center transition-all hover:text-purple-400">06</a>
+    </div>
+  </aside>
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-purple-950/80">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div
+          class="w-10 h-10 rounded-xl bg-cardDark border border-purple-500/30 flex items-center justify-center font-bold text-purple-400 shadow-sm shadow-purple-500/20 group-hover:scale-105 transition-transform">
+          SA
+        </div>
+        <div>
+          <h1 class="text-sm font-extrabold tracking-wide text-white">Sumaiya Ali</h1>
+          <p class="text-[11px] font-medium text-purple-300/70">Full Stack Web Developer</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-wide text-slate-300">
+        <a href="#home" class="hover:text-purple-400 transition-colors">Home</a>
+        <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
+        <a href="#skills" class="hover:text-purple-400 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-purple-400 transition-colors">Projects</a>
+        <a href="#education" class="hover:text-purple-400 transition-colors">Education</a>
+        <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+      </nav>
+
+      <a href="#contact"
+        class="px-6 py-2.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-purple-600/30 flex items-center gap-2 hover:scale-105">
+        Let's connect <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-24 relative z-10 space-y-28">
+
+    <!-- 01. HERO SECTION -->
+    <section id="home" class="pt-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[80vh]">
+      <!-- Left Text Column -->
+      <div class="lg:col-span-7 space-y-8">
+        <div
+          class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#120d1f] border border-purple-500/20 text-xs font-semibold text-purple-200">
+          <span class="w-2.5 h-2.5 rounded-full bg-purple-500 animate-ping"></span>
+          <span>Available for work / Dhaka, Bangladesh</span>
+        </div>
+
+        <h1 class="text-6xl sm:text-8xl lg:text-9xl font-bold tracking-tight leading-[0.95] text-white serif-heading">
+          Sumaiya <br />
+          <span class="text-purple-300 font-normal italic">Ali</span>
+        </h1>
+
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+          I'm a Full-Stack Web Developer and CSE graduate building clean, fast web experiences, dynamic web portals, and
+          reliable full-stack applications from Dhaka, Bangladesh.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#contact"
+            class="px-7 py-3.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-purple-600/30 flex items-center gap-2">
+            Let's Talk <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+          <a href="#projects"
+            class="px-7 py-3.5 rounded-full border border-purple-900/60 hover:border-purple-500 bg-[#120d1f]/80 text-white font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-2">
+            View my work <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Showcase Card Column -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div
+          class="relative w-full max-w-md h-[460px] rounded-[32px] bg-black border border-purple-900/50 shadow-2xl overflow-hidden flex flex-col justify-end p-6 group">
+
+          <!-- Top Floating Stat -->
+          <div
+            class="absolute top-6 left-6 z-20 px-4 py-2 rounded-2xl bg-[#08060f]/90 border border-purple-900/50 backdrop-blur-md shadow-lg">
+            <span class="block text-lg font-extrabold text-white">4+</span>
+            <span class="text-[10px] text-purple-300 uppercase font-mono font-bold">Projects built</span>
+          </div>
+
+          <!-- Photo Container with Fixed Height so it never zooms -->
+          <div
+            class="absolute inset-x-4 top-20 bottom-16 rounded-2xl bg-black overflow-hidden flex items-end justify-center z-10">
+            <img id="userPhoto" src="./pic-aurthy (1).png" alt="Sumaiya Ali"
+              class="w-full h-full object-contain object-bottom">
+          </div>
+
+          <!-- Location Badge -->
+          <div
+            class="absolute top-6 right-6 z-20 px-3.5 py-1.5 rounded-xl bg-[#08060f]/90 border border-purple-800/60 text-[11px] text-slate-300 backdrop-blur-md font-mono shadow-md">
+            <div class="flex items-center gap-1.5 font-bold text-white">
+              <i class="fa-solid fa-location-dot text-purple-400"></i> Dhaka, BD
+            </div>
+          </div>
+
+          <!-- Bottom Info Strip -->
+          <div
+            class="relative z-20 pt-4 border-t border-purple-900/40 flex items-center justify-between text-xs font-mono font-semibold text-slate-300">
+            <span class="text-white font-bold">Sumaiya Ali</span>
+            <span class="text-purple-400">Full-Stack / Next.js</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. ABOUT SECTION -->
+    <section id="about" class="space-y-8 pt-6">
+      <div class="space-y-2">
+        <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">02 / Background</span>
+        <h2 class="text-5xl sm:text-6xl font-normal text-white serif-heading">My professional journey</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-5 glass-card rounded-[32px] p-8 space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-xl">
+            <i class="fa-solid fa-code-commit"></i>
+          </div>
+          <div>
+            <span class="text-[11px] font-mono text-purple-400 uppercase tracking-widest font-semibold">Focus
+              Area</span>
+            <h3 class="text-2xl font-extrabold text-white mt-1 leading-snug">Engineering modern applications from the
+              ground up.</h3>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Computer Science graduate equipped with hands-on technical proficiency in full-stack architecture, database
+            optimization, and user-centric design.
+          </p>
+        </div>
+
+        <div
+          class="lg:col-span-7 glass-card rounded-[32px] p-8 space-y-5 text-sm sm:text-base text-slate-300 leading-relaxed flex flex-col justify-center">
+          <p>
+            Having graduated with a B.Sc. in Computer Science and Engineering from BRAC University and completed
+            comprehensive full-stack training at Programming Hero, I bridge the gap between creative frontend interfaces
+            and robust server logic.
+          </p>
+          <p>
+            My development philosophy centers around writing maintainable, structured code. Whether designing real-time
+            booking engines or secure authentication workflows, I focus on performance, scalability, and delivering
+            polished digital experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. SKILLS SECTION -->
+    <section id="skills" class="space-y-8 pt-6">
+      <div class="space-y-2">
+        <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">03 / Expertise</span>
+        <h2 class="text-5xl sm:text-6xl font-normal text-white serif-heading">Technical proficiencies</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Frontend Card -->
+        <div class="glass-card rounded-[28px] p-7 space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-xl">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Frontend</h3>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-react text-cyan-400"></i> React.js</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-solid fa-N"></i> Next.js</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-css3-alt text-purple-400"></i> Tailwind CSS</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-html5 text-orange-400"></i> HTML5/CSS3</span>
+          </div>
+        </div>
+
+        <!-- Backend Card -->
+        <div class="glass-card rounded-[28px] p-7 space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-xl">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Backend</h3>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-node-js text-emerald-400"></i> Node.js</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-solid fa-bolt text-yellow-400"></i> Express.js</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-solid fa-network-wired text-purple-400"></i> REST APIs</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-laravel text-red-400"></i> Laravel</span>
+          </div>
+        </div>
+
+        <!-- Database Card -->
+        <div class="glass-card rounded-[28px] p-7 space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-xl">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Databases</h3>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-solid fa-leaf text-emerald-500"></i> MongoDB</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-solid fa-table text-blue-400"></i> MySQL</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-solid fa-lock text-purple-300"></i> Better-Auth</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-solid fa-key text-amber-400"></i> JWT</span>
+          </div>
+        </div>
+
+        <!-- Languages & Tools Card -->
+        <div class="glass-card rounded-[28px] p-7 space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-xl">
+            <i class="fa-solid fa-toolbox"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Languages</h3>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-js text-yellow-400"></i> JavaScript</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-python text-blue-400"></i> Python</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-php text-indigo-400"></i> PHP</span>
+            <span
+              class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
+                class="fa-brands fa-git-alt text-orange-500"></i> Git/GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. FEATURED PROJECTS SECTION -->
+    <section id="projects" class="space-y-8 pt-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="space-y-2">
+          <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">04 / Portfolio</span>
+          <h2 class="text-5xl sm:text-6xl font-normal text-white serif-heading">Featured projects</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-400">Full-Stack Solutions</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Project 1 -->
+        <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span
+                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Study
+                Space Booking</span>
+              <span class="text-xs text-slate-400 font-mono">2026</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white">StudyNook Platform</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Comprehensive room reservation platform featuring intelligent search filters, conflict-avoidance
+              validation, Google OAuth via Better-Auth, and secure token management.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Next.js</span>
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Express</span>
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">MongoDB</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-purple-950 flex justify-between items-center">
+            <span class="text-xs text-slate-400 font-mono">Full-Stack System</span>
+            <a href="https://github.com/sumaiya6722" target="_blank"
+              class="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:underline">
+              Source Code <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span
+                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Job
+                Portal App</span>
+              <span class="text-xs text-slate-400 font-mono">2026</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Job Seeking Web App</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Dynamic employment board equipped with role-specific dashboards for jobseekers and employers, complete
+              CRUD capabilities, and JWT endpoint protection.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Next.js</span>
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Node.js</span>
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">JWT</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-purple-950 flex justify-between items-center">
+            <span class="text-xs text-slate-400 font-mono">Full-Stack System</span>
+            <a href="https://github.com/sumaiya6722" target="_blank"
+              class="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:underline">
+              Source Code <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span
+                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">News
+                Platform</span>
+              <span class="text-xs text-slate-400 font-mono">2026</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white">News Portal Web App</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Responsive digital publishing platform featuring dynamic UI rendering via Tailwind CSS, GitHub/Google
+              authentication, and RESTful database management.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Next.js</span>
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Tailwind</span>
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Better-Auth</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-purple-950 flex justify-between items-center">
+            <span class="text-xs text-slate-400 font-mono">Frontend & Backend</span>
+            <a href="https://github.com/sumaiya6722" target="_blank"
+              class="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:underline">
+              Source Code <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span
+                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Travel
+                Platform</span>
+              <span class="text-xs text-slate-400 font-mono">2026</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Travel Booking Web App</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Streamlined booking application powered by a dependable Express backend architecture and optimized
+              client-side state handling for instantaneous filtering.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">React</span>
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Express</span>
+              <span
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">MongoDB</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-purple-950 flex justify-between items-center">
+            <span class="text-xs text-slate-400 font-mono">Full-Stack Solution</span>
+            <a href="https://github.com/sumaiya6722" target="_blank"
+              class="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:underline">
+              Source Code <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. ACADEMIC JOURNEY SECTION -->
+    <section id="education" class="space-y-8 pt-6">
+      <div class="space-y-2">
+        <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">05 / Education</span>
+        <h2 class="text-5xl sm:text-6xl font-normal text-white serif-heading">Academic credentials</h2>
+      </div>
+
+      <div class="space-y-6">
+        <!-- University Card -->
+        <div class="glass-card rounded-[28px] p-8 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+          <div class="space-y-2">
+            <span
+              class="text-xs font-mono px-3 py-1 rounded-full bg-slate-950 text-purple-300 border border-purple-950 font-semibold">
+              <i class="fa-solid fa-graduation-cap mr-1.5"></i>University
+            </span>
+            <h3 class="text-2xl font-bold text-white">BRAC University</h3>
+            <p class="text-xs sm:text-sm text-slate-300">B.Sc. in Computer Science and Engineering (CGPA: 2.92 / 4.00)
+            </p>
+          </div>
+          <span
+            class="text-xs font-mono text-purple-300 font-semibold bg-slate-950 px-4 py-2 rounded-xl border border-purple-950">2020
+            - 2025</span>
+        </div>
+
+        <!-- HSC Card -->
+        <div class="glass-card rounded-[28px] p-8 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+          <div class="space-y-2">
+            <span
+              class="text-xs font-mono px-3 py-1 rounded-full bg-slate-950 text-purple-300 border border-purple-950 font-semibold">
+              <i class="fa-solid fa-school mr-1.5"></i>College
+            </span>
+            <h3 class="text-2xl font-bold text-white">Dhaka City College</h3>
+            <p class="text-xs sm:text-sm text-slate-300">Higher Secondary Certificate (HSC) - GPA: 4.50 (Science Group)
+            </p>
+          </div>
+          <span
+            class="text-xs font-mono text-purple-300 font-semibold bg-slate-950 px-4 py-2 rounded-xl border border-purple-950">2019</span>
+        </div>
+
+        <!-- SSC Card -->
+        <div class="glass-card rounded-[28px] p-8 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+          <div class="space-y-2">
+            <span
+              class="text-xs font-mono px-3 py-1 rounded-full bg-slate-950 text-purple-300 border border-purple-950 font-semibold">
+              <i class="fa-solid fa-award mr-1.5"></i>School
+            </span>
+            <h3 class="text-2xl font-bold text-white">Monipur High School & College</h3>
+            <p class="text-xs sm:text-sm text-slate-300">Secondary School Certificate (SSC) - GPA: 5.00 (Science Group)
+            </p>
+          </div>
+          <span
+            class="text-xs font-mono text-purple-300 font-semibold bg-slate-950 px-4 py-2 rounded-xl border border-purple-950">2017</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. CONTACT SECTION -->
+    <section id="contact" class="space-y-8 pt-6">
+      <div class="text-center space-y-2 max-w-xl mx-auto">
+        <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">06 / Contact</span>
+        <h2 class="text-5xl sm:text-7xl font-normal text-white serif-heading">Let's build together</h2>
+        <p class="text-xs text-slate-400">Have a project, professional role, or inquiry? Feel free to reach out.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 space-y-4">
+          <div class="glass-card rounded-2xl p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-lg">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <span class="block text-[10px] font-mono text-slate-400 uppercase">Email</span>
+              <span class="text-sm font-semibold text-white">sumaiyaali6722@gmail.com</span>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-lg">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <span class="block text-[10px] font-mono text-slate-400 uppercase">Phone</span>
+              <span class="text-sm font-semibold text-white">+880 1749382340</span>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-lg">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <span class="block text-[10px] font-mono text-slate-400 uppercase">Location</span>
+              <span class="text-sm font-semibold text-white">Mirpur-2, Dhaka, Bangladesh</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 glass-card rounded-[32px] p-8 sm:p-10 space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1.5">
+              <label class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Your name</label>
+              <input type="text" placeholder="Jane Doe"
+                class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-purple-950 text-xs text-white focus:outline-none focus:border-purple-500">
+            </div>
+            <div class="space-y-1.5">
+              <label class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Your email</label>
+              <input type="email" placeholder="jane@example.com"
+                class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-purple-950 text-xs text-white focus:outline-none focus:border-purple-500">
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Message</label>
+            <textarea rows="4" placeholder="Tell me about your idea, project or opportunity..."
+              class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-purple-950 text-xs text-white focus:outline-none focus:border-purple-500 resize-none"></textarea>
+          </div>
+          <button type="button"
+            class="w-full py-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-purple-600/30 flex items-center justify-center gap-2">
+            Send message <i class="fa-solid fa-paper-plane text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-purple-950/60 bg-cardDark/60 py-12 relative z-10">
+    <div
+      class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400 font-mono">
+      <div class="flex items-center gap-3">
+        <div
+          class="w-8 h-8 rounded-lg bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold">
+          SA</div>
+        <span>© 2026 Sumaiya Ali. All rights reserved.</span>
+      </div>
+
+      <div class="flex items-center space-x-6 text-base text-slate-300">
+        <a href="https://github.com/sumaiya6722" target="_blank" class="hover:text-purple-400 transition-colors"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="mailto:sumaiyaali6722@gmail.com" class="hover:text-purple-400 transition-colors"><i
+            class="fa-solid fa-envelope"></i></a>
+        <a href="tel:+8801749382340" class="hover:text-purple-400 transition-colors"><i
+            class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Sidebar Active Scroll Tracking -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      const navItems = document.querySelectorAll('.nav-num');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-30% 0px -50% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navItems.forEach(item => item.classList.remove('active'));
+            const activeNav = document.querySelector(`a[href="#${id}"]`);
+            if (activeNav) {
+              activeNav.classList.add('active');
+            }
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+
+</body>
+
+</html>
