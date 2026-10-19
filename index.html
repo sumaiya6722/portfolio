@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="dark scroll-smooth" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sumaiya Ali | Full-Stack Web Developer</title>
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'light'; } catch (_) {}
+  </script>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -48,6 +51,69 @@
       border-color: rgba(168, 85, 247, 0.4);
       transform: translateY(-2px);
     }
+
+    html { scroll-padding-top: 6rem; }
+    section[id] { scroll-margin-top: 6rem; }
+    .project-art { min-height: 12rem; }
+    .mobile-menu[hidden] { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+
+    /* Light lavender and warm ivory palette */
+    body { background: #fbf8ff; color: #392f46; }
+    ::-webkit-scrollbar-track { background: #f2ebfa; }
+    ::-webkit-scrollbar-thumb { background: #c4addd; }
+    ::-webkit-scrollbar-thumb:hover { background: #8b5bb6; }
+    .bg-darkBg\/90, .bg-darkBg\/95 { background-color: rgba(251, 248, 255, .94) !important; }
+    .bg-cardDark\/60, .bg-cardDark\/90 { background-color: rgba(246, 239, 252, .92) !important; }
+    .bg-cardDark { background-color: #f6effc !important; }
+    .bg-\[\#120d1f\], .bg-\[\#120d1f\]\/80 { background-color: #f0e7f8 !important; }
+    .bg-\[\#08060f\]\/90 { background-color: rgba(251, 248, 255, .92) !important; }
+    .bg-black { background-color: #eee5f7 !important; }
+    .bg-slate-950 { background-color: #f2edf7 !important; }
+    .glass-card { background: rgba(255, 255, 255, .82); border-color: rgba(139, 91, 182, .2); box-shadow: 0 12px 35px rgba(87, 56, 113, .06); }
+    .glass-card:hover { border-color: rgba(139, 91, 182, .48); }
+    .text-white { color: #352b40 !important; }
+    .text-slate-300 { color: #5d5368 !important; }
+    .text-slate-400 { color: #766b80 !important; }
+    .text-slate-500 { color: #897e93 !important; }
+    .text-purple-200 { color: #645074 !important; }
+    .text-purple-300 { color: #765291 !important; }
+    .text-purple-400 { color: #8256a5 !important; }
+    .border-purple-950, .border-purple-950\/60, .border-purple-950\/80 { border-color: #e5d8f0 !important; }
+    .border-purple-900\/50, .border-purple-900\/60, .border-purple-900\/40 { border-color: #dfd0eb !important; }
+    .border-purple-800\/60 { border-color: #d8c5e8 !important; }
+    .bg-purple-950\/30 { background-color: #eee4f6 !important; }
+    .bg-purple-950\/50 { background-color: #eee4f6 !important; }
+    .bg-\[linear-gradient\(to_right\,\#150c2a_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#150c2a_1px\,transparent_1px\)\] { opacity: .12; }
+    #userPhoto { mix-blend-mode: multiply; }
+
+    html[data-theme="dark"] body { background: #08060f; color: #e2e8f0; }
+    html[data-theme="dark"] ::-webkit-scrollbar-track { background: #08060f; }
+    html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #261b42; }
+    html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: #a855f7; }
+    html[data-theme="dark"] .bg-darkBg\/90, html[data-theme="dark"] .bg-darkBg\/95 { background-color: rgba(8, 6, 15, .94) !important; }
+    html[data-theme="dark"] .bg-cardDark\/60, html[data-theme="dark"] .bg-cardDark\/90 { background-color: rgba(18, 13, 31, .92) !important; }
+    html[data-theme="dark"] .bg-cardDark { background-color: #120d1f !important; }
+    html[data-theme="dark"] .bg-\[\#120d1f\], html[data-theme="dark"] .bg-\[\#120d1f\]\/80 { background-color: #120d1f !important; }
+    html[data-theme="dark"] .bg-\[\#08060f\]\/90 { background-color: rgba(8, 6, 15, .92) !important; }
+    html[data-theme="dark"] .bg-black { background-color: #000 !important; }
+    html[data-theme="dark"] .bg-slate-950 { background-color: #020617 !important; }
+    html[data-theme="dark"] .glass-card { background: rgba(18, 13, 31, .85); border-color: rgba(168, 85, 247, .15); box-shadow: none; }
+    html[data-theme="dark"] .glass-card:hover { border-color: rgba(168, 85, 247, .4); }
+    html[data-theme="dark"] .text-white { color: #fff !important; }
+    html[data-theme="dark"] .text-slate-300 { color: #cbd5e1 !important; }
+    html[data-theme="dark"] .text-slate-400 { color: #94a3b8 !important; }
+    html[data-theme="dark"] .text-slate-500 { color: #64748b !important; }
+    html[data-theme="dark"] .text-purple-200 { color: #e9d5ff !important; }
+    html[data-theme="dark"] .text-purple-300 { color: #d8b4fe !important; }
+    html[data-theme="dark"] .text-purple-400 { color: #c084fc !important; }
+    html[data-theme="dark"] .border-purple-950, html[data-theme="dark"] .border-purple-950\/60, html[data-theme="dark"] .border-purple-950\/80 { border-color: #3b0764 !important; }
+    html[data-theme="dark"] .border-purple-900\/50, html[data-theme="dark"] .border-purple-900\/60, html[data-theme="dark"] .border-purple-900\/40 { border-color: #581c87 !important; }
+    html[data-theme="dark"] .border-purple-800\/60 { border-color: #6b21a8 !important; }
+    html[data-theme="dark"] .bg-purple-950\/30, html[data-theme="dark"] .bg-purple-950\/50 { background-color: rgba(59, 7, 100, .3) !important; }
+    html[data-theme="dark"] #userPhoto { mix-blend-mode: normal; }
 
     /* Active state for sidebar nav */
     .nav-num.active {
@@ -116,20 +182,30 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-wide text-slate-300">
+      <nav class="hidden lg:flex items-center space-x-6 text-xs font-semibold tracking-wide text-slate-300">
         <a href="#home" class="hover:text-purple-400 transition-colors">Home</a>
         <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
         <a href="#skills" class="hover:text-purple-400 transition-colors">Skills</a>
         <a href="#projects" class="hover:text-purple-400 transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-purple-400 transition-colors">Experience</a>
         <a href="#education" class="hover:text-purple-400 transition-colors">Education</a>
         <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
       </nav>
 
       <a href="#contact"
-        class="px-6 py-2.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-purple-600/30 flex items-center gap-2 hover:scale-105">
+        class="hidden sm:flex px-5 py-2.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-purple-600/30 items-center gap-2 hover:scale-105">
         Let's connect <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
       </a>
+      <button id="themeToggle" type="button" aria-label="Enable dark theme" title="Enable dark theme" class="w-10 h-10 rounded-full border border-purple-900/60 bg-purple-600/10 text-purple-500 hover:border-purple-500 transition-colors flex items-center justify-center"><i id="themeIcon" class="fa-solid fa-moon" aria-hidden="true"></i><span class="sr-only">Toggle color theme</span></button>
+      <button id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden w-11 h-11 rounded-xl border border-purple-900/60 text-white hover:border-purple-500"><i class="fa-solid fa-bars"></i></button>
     </div>
+    <nav id="mobileMenu" hidden class="mobile-menu lg:hidden border-t border-purple-950/80 bg-darkBg/95 px-6 py-4">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 gap-2 text-sm font-semibold text-slate-200">
+        <a class="rounded-lg px-3 py-3 hover:bg-purple-950/50" href="#home">Home</a><a class="rounded-lg px-3 py-3 hover:bg-purple-950/50" href="#about">About</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-purple-950/50" href="#skills">Skills</a><a class="rounded-lg px-3 py-3 hover:bg-purple-950/50" href="#projects">Projects</a>
+        <a class="rounded-lg px-3 py-3 hover:bg-purple-950/50" href="#experience">Experience</a><a class="rounded-lg px-3 py-3 hover:bg-purple-950/50" href="#education">Education</a><a class="rounded-lg px-3 py-3 hover:bg-purple-950/50" href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
   <!-- Main Container -->
@@ -164,6 +240,12 @@
             class="px-7 py-3.5 rounded-full border border-purple-900/60 hover:border-purple-500 bg-[#120d1f]/80 text-white font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-2">
             View my work <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
+          <a href="./resume.pdf" download="Sumaiya-Ali-Resume.pdf" class="px-7 py-3.5 rounded-full border border-purple-500/40 hover:border-purple-400 bg-purple-950/30 text-white font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-2"><i class="fa-solid fa-download"></i> Download résumé</a>
+        </div>
+        <div class="flex items-center gap-3 pt-1 text-sm text-slate-400" aria-label="Social profiles">
+          <span class="text-xs uppercase tracking-widest font-mono">Find me</span>
+          <a aria-label="GitHub" href="https://github.com/sumaiya6722" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-purple-950 flex items-center justify-center hover:text-purple-300 hover:border-purple-500"><i class="fa-brands fa-github"></i></a>
+          <a aria-label="LinkedIn profile" title="LinkedIn" href="https://www.linkedin.com/in/sumaiya-ali-36aaa5224/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-purple-950 flex items-center justify-center hover:text-purple-300 hover:border-purple-500"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
 
@@ -240,7 +322,16 @@
             booking engines or secure authentication workflows, I focus on performance, scalability, and delivering
             polished digital experiences.
           </p>
+          <p>I enjoy taking a feature from an early sketch through a thoughtful interface and dependable backend. I’m happiest solving practical problems, learning a tool deeply, and polishing the details that make an application feel easy to use. Away from the keyboard, I make time for family, music, and exploring new places around Dhaka.</p>
         </div>
+      </div>
+    </section>
+
+    <section id="experience" class="space-y-8 pt-6">
+      <div class="space-y-2"><span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">Experience / Practice</span><h2 class="text-5xl sm:text-6xl font-normal text-white serif-heading">Learning by building</h2></div>
+      <div class="glass-card rounded-[28px] p-8 sm:p-10 flex gap-5">
+        <div class="w-12 h-12 shrink-0 rounded-2xl bg-purple-600/10 flex items-center justify-center text-purple-400 text-xl"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="space-y-3"><div class="flex flex-wrap items-center gap-3"><h3 class="text-xl font-bold text-white">Full-stack project work</h3><span class="text-xs font-mono text-purple-300">Independent / Training</span></div><p class="text-sm text-slate-300 leading-relaxed">I have not listed formal employment here. My practical experience comes from end-to-end projects and structured full-stack training, where I’ve worked with React and Next.js interfaces, Node.js and Express APIs, databases, authentication, and deployment workflows.</p><p class="text-xs text-slate-400">Programming Hero · Full-stack development training</p></div>
       </div>
     </section>
 
@@ -271,6 +362,8 @@
             <span
               class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
                 class="fa-brands fa-html5 text-orange-400"></i> HTML5/CSS3</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 19V5M3 19h18M6 15l4-5 4 3 6-8"/><circle cx="10" cy="10" r="1" fill="currentColor"/><circle cx="14" cy="13" r="1" fill="currentColor"/><circle cx="20" cy="5" r="1" fill="currentColor"/></svg> Recharts</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><img src="https://cdn.simpleicons.org/heroui/7828C8" alt="" width="16" height="16" loading="lazy"> HeroUI</span>
           </div>
         </div>
 
@@ -315,6 +408,7 @@
             <span
               class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><i
                 class="fa-solid fa-key text-amber-400"></i> JWT</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-950 text-xs text-slate-300 border border-purple-950 flex items-center gap-1.5"><img src="https://cdn.simpleicons.org/stripe/635BFF" alt="" width="16" height="16" loading="lazy"> Stripe Payments</span>
           </div>
         </div>
 
@@ -347,142 +441,147 @@
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div class="space-y-2">
           <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">04 / Portfolio</span>
-          <h2 class="text-5xl sm:text-6xl font-normal text-white serif-heading">Featured projects</h2>
+          <h2 class="text-5xl sm:text-6xl font-normal text-white serif-heading">Projects from my profile</h2>
         </div>
         <span class="text-xs font-mono text-slate-400">Full-Stack Solutions</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Project 1 -->
-        <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between space-y-6">
+        <div class="glass-card rounded-[32px] p-6 flex flex-col justify-between space-y-5">
+          <img src="./assets/bookshelph.svg" alt="Illustration of the BookShelph book browsing and borrowing interface" class="project-art w-full rounded-2xl object-cover" loading="lazy">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span
-                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Study
-                Space Booking</span>
-              <span class="text-xs text-slate-400 font-mono">2026</span>
+                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Book Borrowing</span>
+              <span class="text-xs text-slate-400 font-mono">LinkedIn</span>
             </div>
-            <h3 class="text-2xl font-bold text-white">StudyNook Platform</h3>
+            <h3 class="text-2xl font-bold text-white">BookShelph</h3>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Comprehensive room reservation platform featuring intelligent search filters, conflict-avoidance
-              validation, Google OAuth via Better-Auth, and secure token management.
+              Full-stack book-borrowing platform to discover, search, and filter books by title or category, view details, request books, and manage a profile.
             </p>
             <div class="flex flex-wrap gap-2 pt-2">
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Next.js</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Search &amp; filters</span>
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Express</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Book requests</span>
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">MongoDB</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">User profiles</span>
             </div>
           </div>
           <div class="pt-4 border-t border-purple-950 flex justify-between items-center">
-            <span class="text-xs text-slate-400 font-mono">Full-Stack System</span>
+              <a href="#bookshelph-details" class="text-xs font-bold text-purple-300 hover:underline">View details <i class="fa-solid fa-arrow-right ml-1"></i></a>
             <a href="https://github.com/sumaiya6722" target="_blank"
               class="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:underline">
-              Source Code <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              GitHub Profile <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between space-y-6">
+        <div class="glass-card rounded-[32px] p-6 flex flex-col justify-between space-y-5">
+          <img src="./assets/keenfriends.svg" alt="Illustration of the KeenFriends social timeline and activity chart" class="project-art w-full rounded-2xl object-cover" loading="lazy">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span
-                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Job
-                Portal App</span>
-              <span class="text-xs text-slate-400 font-mono">2026</span>
+                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Social Platform</span>
+              <span class="text-xs text-slate-400 font-mono">LinkedIn</span>
             </div>
-            <h3 class="text-2xl font-bold text-white">Job Seeking Web App</h3>
+            <h3 class="text-2xl font-bold text-white">KeenFriends</h3>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Dynamic employment board equipped with role-specific dashboards for jobseekers and employers, complete
-              CRUD capabilities, and JWT endpoint protection.
+              A social platform for viewing friends’ profiles and timelines, connecting by call, text, or video, and exploring timeline statistics with Recharts.
             </p>
             <div class="flex flex-wrap gap-2 pt-2">
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Next.js</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Recharts</span>
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Node.js</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Calls · text · video</span>
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">JWT</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Social features</span>
             </div>
           </div>
           <div class="pt-4 border-t border-purple-950 flex justify-between items-center">
-            <span class="text-xs text-slate-400 font-mono">Full-Stack System</span>
+              <a href="#keenfriends-details" class="text-xs font-bold text-purple-300 hover:underline">View details <i class="fa-solid fa-arrow-right ml-1"></i></a>
             <a href="https://github.com/sumaiya6722" target="_blank"
               class="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:underline">
-              Source Code <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              GitHub Profile <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between space-y-6">
+        <div class="glass-card rounded-[32px] p-6 flex flex-col justify-between space-y-5">
+          <img src="./assets/lifecoach.svg" alt="Illustration of the LifeCoach lesson dashboard and learning progress" class="project-art w-full rounded-2xl object-cover" loading="lazy">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span
-                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">News
-                Platform</span>
-              <span class="text-xs text-slate-400 font-mono">2026</span>
+                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Learning Platform</span>
+              <span class="text-xs text-slate-400 font-mono">LinkedIn</span>
             </div>
-            <h3 class="text-2xl font-bold text-white">News Portal Web App</h3>
+            <h3 class="text-2xl font-bold text-white">LifeCoach</h3>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Responsive digital publishing platform featuring dynamic UI rendering via Tailwind CSS, GitHub/Google
-              authentication, and RESTful database management.
+              Full-stack learning platform for free and premium lessons, content publishing, likes, favorites, reporting, profile management, and admin tools.
             </p>
             <div class="flex flex-wrap gap-2 pt-2">
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Next.js</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Free &amp; premium lessons</span>
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Tailwind</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Content publishing</span>
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Better-Auth</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Admin dashboard</span>
             </div>
           </div>
           <div class="pt-4 border-t border-purple-950 flex justify-between items-center">
-            <span class="text-xs text-slate-400 font-mono">Frontend & Backend</span>
+              <a href="#lifecoach-details" class="text-xs font-bold text-purple-300 hover:underline">View details <i class="fa-solid fa-arrow-right ml-1"></i></a>
             <a href="https://github.com/sumaiya6722" target="_blank"
               class="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:underline">
-              Source Code <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              GitHub Profile <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
 
         <!-- Project 4 -->
-        <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between space-y-6">
+        <div class="glass-card rounded-[32px] p-6 flex flex-col justify-between space-y-5">
+          <img src="./assets/studynook.svg" alt="Illustration of StudyNook room listings and reservation time slots" class="project-art w-full rounded-2xl object-cover" loading="lazy">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span
-                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Travel
-                Platform</span>
-              <span class="text-xs text-slate-400 font-mono">2026</span>
+                class="text-xs font-mono px-3.5 py-1 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold">Study Room Booking</span>
+              <span class="text-xs text-slate-400 font-mono">LinkedIn</span>
             </div>
-            <h3 class="text-2xl font-bold text-white">Travel Booking Web App</h3>
+            <h3 class="text-2xl font-bold text-white">StudyNook</h3>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Streamlined booking application powered by a dependable Express backend architecture and optimized
-              client-side state handling for instantaneous filtering.
+              Full-stack study room booking platform with room discovery, search and filters, room details, reservations, and an admin dashboard.
             </p>
             <div class="flex flex-wrap gap-2 pt-2">
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">React</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Room search</span>
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Express</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Reservations</span>
               <span
-                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">MongoDB</span>
+                class="text-xs px-3 py-1 rounded-lg bg-slate-950 text-purple-200 border border-purple-950">Admin dashboard</span>
             </div>
           </div>
           <div class="pt-4 border-t border-purple-950 flex justify-between items-center">
-            <span class="text-xs text-slate-400 font-mono">Full-Stack Solution</span>
+              <a href="#studynook-details" class="text-xs font-bold text-purple-300 hover:underline">View details <i class="fa-solid fa-arrow-right ml-1"></i></a>
             <a href="https://github.com/sumaiya6722" target="_blank"
               class="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:underline">
-              Source Code <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              GitHub Profile <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
       </div>
     </section>
 
+    <section id="project-details" class="space-y-6 pt-6">
+      <div class="space-y-2"><span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">Project notes</span><h2 class="text-5xl sm:text-6xl font-normal text-white serif-heading">Project details</h2><p class="text-sm text-slate-400 max-w-2xl">These summaries reflect the project descriptions on my LinkedIn profile. The profile doesn’t list project-specific technology stacks or public demo and repository links yet.</p></div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <article id="bookshelph-details" class="glass-card rounded-[28px] p-7 space-y-4 scroll-mt-28"><h3 class="text-2xl font-bold text-white">BookShelph — Online Book Borrowing Platform</h3><p class="text-sm text-slate-300">Users can browse, search, and filter books by title or category, view book details, request books, and manage profiles.</p><p class="text-xs text-purple-200">Project-specific stack: not listed on LinkedIn.</p><div class="text-sm text-slate-400"><b class="text-slate-200">Core flow:</b> find a book, review its details, then request to borrow it.<br><b class="text-slate-200">Possible next steps:</b> show request status and borrowing history.</div><a href="https://www.linkedin.com/in/sumaiya-ali-36aaa5224/" target="_blank" rel="noopener noreferrer" class="text-sm text-purple-300 hover:underline">View LinkedIn profile</a></article>
+        <article id="keenfriends-details" class="glass-card rounded-[28px] p-7 space-y-4 scroll-mt-28"><h3 class="text-2xl font-bold text-white">KeenFriends — where people connect</h3><p class="text-sm text-slate-300">A social platform for viewing friends’ profiles and timelines, connecting by call, text, or video, and viewing timeline statistics.</p><p class="text-xs text-purple-200">Recharts is used for timeline statistics; other project-specific technologies are not listed on LinkedIn.</p><div class="text-sm text-slate-400"><b class="text-slate-200">Core flow:</b> explore a friend’s profile and timeline, connect, and review activity statistics.<br><b class="text-slate-200">Possible next steps:</b> add clearer privacy controls and notification settings.</div><a href="https://www.linkedin.com/in/sumaiya-ali-36aaa5224/" target="_blank" rel="noopener noreferrer" class="text-sm text-purple-300 hover:underline">View LinkedIn profile</a></article>
+        <article id="lifecoach-details" class="glass-card rounded-[28px] p-7 space-y-4 scroll-mt-28"><h3 class="text-2xl font-bold text-white">LifeCoach — Learning &amp; Lesson Platform</h3><p class="text-sm text-slate-300">A full-stack learning platform for exploring free and premium lessons, publishing content, interacting with users, and managing profiles. Features include likes, favorites, reporting, premium access, and admin controls.</p><p class="text-xs text-purple-200">Project-specific technology stack: not listed on LinkedIn.</p><div class="text-sm text-slate-400"><b class="text-slate-200">Core flow:</b> discover lessons, engage with content, and manage publishing and moderation.<br><b class="text-slate-200">Possible next steps:</b> add learning progress tracking and lesson completion history.</div><a href="https://www.linkedin.com/in/sumaiya-ali-36aaa5224/" target="_blank" rel="noopener noreferrer" class="text-sm text-purple-300 hover:underline">View LinkedIn profile</a></article>
+        <article id="studynook-details" class="glass-card rounded-[28px] p-7 space-y-4 scroll-mt-28"><h3 class="text-2xl font-bold text-white">StudyNook — Study Room Booking Platform</h3><p class="text-sm text-slate-300">A full-stack platform to browse, search, and filter study rooms, view room details, and manage reservations. Includes an admin dashboard for rooms and platform features.</p><p class="text-xs text-purple-200">Project-specific technology stack: not listed on LinkedIn.</p><div class="text-sm text-slate-400"><b class="text-slate-200">Core flow:</b> discover a room, review its details, and manage a reservation.<br><b class="text-slate-200">Possible next steps:</b> add availability calendars and reservation reminders.</div><a href="https://www.linkedin.com/in/sumaiya-ali-36aaa5224/" target="_blank" rel="noopener noreferrer" class="text-sm text-purple-300 hover:underline">View LinkedIn profile</a></article>
+      </div>
+    </section>
     <!-- 05. ACADEMIC JOURNEY SECTION -->
     <section id="education" class="space-y-8 pt-6">
       <div class="space-y-2">
@@ -555,7 +654,7 @@
             </div>
             <div>
               <span class="block text-[10px] font-mono text-slate-400 uppercase">Email</span>
-              <span class="text-sm font-semibold text-white">sumaiyaali6722@gmail.com</span>
+              <a href="mailto:sumaiyaali6722@gmail.com" class="text-sm font-semibold text-white hover:text-purple-300">sumaiyaali6722@gmail.com</a>
             </div>
           </div>
 
@@ -565,7 +664,7 @@
             </div>
             <div>
               <span class="block text-[10px] font-mono text-slate-400 uppercase">Phone</span>
-              <span class="text-sm font-semibold text-white">+880 1749382340</span>
+              <a href="tel:+8801749382340" class="text-sm font-semibold text-white hover:text-purple-300">+880 1749382340</a>
             </div>
           </div>
 
@@ -580,29 +679,29 @@
           </div>
         </div>
 
-        <div class="lg:col-span-7 glass-card rounded-[32px] p-8 sm:p-10 space-y-5">
+        <form id="contactForm" class="lg:col-span-7 glass-card rounded-[32px] p-8 sm:p-10 space-y-5">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="space-y-1.5">
-              <label class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Your name</label>
-              <input type="text" placeholder="Jane Doe"
+              <label for="contactName" class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Your name</label>
+              <input id="contactName" name="name" required type="text" placeholder="Jane Doe"
                 class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-purple-950 text-xs text-white focus:outline-none focus:border-purple-500">
             </div>
             <div class="space-y-1.5">
-              <label class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Your email</label>
-              <input type="email" placeholder="jane@example.com"
+              <label for="contactEmail" class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Your email</label>
+              <input id="contactEmail" name="email" required type="email" placeholder="jane@example.com"
                 class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-purple-950 text-xs text-white focus:outline-none focus:border-purple-500">
             </div>
           </div>
           <div class="space-y-1.5">
-            <label class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Message</label>
-            <textarea rows="4" placeholder="Tell me about your idea, project or opportunity..."
+            <label for="contactMessage" class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Message</label>
+            <textarea id="contactMessage" name="message" required rows="4" placeholder="Tell me about your idea, project or opportunity..."
               class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-purple-950 text-xs text-white focus:outline-none focus:border-purple-500 resize-none"></textarea>
           </div>
-          <button type="button"
+          <button type="submit"
             class="w-full py-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-purple-600/30 flex items-center justify-center gap-2">
             Send message <i class="fa-solid fa-paper-plane text-[10px]"></i>
           </button>
-        </div>
+        </form>
       </div>
     </section>
 
@@ -633,6 +732,38 @@
   <!-- JavaScript for Sidebar Active Scroll Tracking -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const setTheme = theme => {
+        document.documentElement.dataset.theme = theme;
+        const nextTheme = theme === 'light' ? 'dark' : 'light';
+        themeToggle.setAttribute('aria-label', `Enable ${nextTheme} theme`);
+        themeToggle.title = `Enable ${nextTheme} theme`;
+        themeIcon.className = `fa-solid ${theme === 'light' ? 'fa-moon' : 'fa-sun'}`;
+        try { localStorage.setItem('portfolio-theme', theme); } catch (_) {}
+      };
+      setTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+      themeToggle.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuToggle.addEventListener('click', () => {
+        const opening = mobileMenu.hidden;
+        mobileMenu.hidden = !opening;
+        menuToggle.setAttribute('aria-expanded', String(opening));
+        menuToggle.setAttribute('aria-label', opening ? 'Close navigation' : 'Open navigation');
+        menuToggle.innerHTML = opening ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        mobileMenu.hidden = true; menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation'); menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }));
+      document.getElementById('contactForm').addEventListener('submit', event => {
+        event.preventDefault();
+        const form = new FormData(event.currentTarget);
+        const subject = `Portfolio inquiry from ${form.get('name')}`;
+        const body = `Name: ${form.get('name')}\nEmail: ${form.get('email')}\n\n${form.get('message')}`;
+        window.location.href = `mailto:sumaiyaali6722@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
       const sections = document.querySelectorAll('section');
       const navItems = document.querySelectorAll('.nav-num');
 
