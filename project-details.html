@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08060f">
+  <title>Project details | Sumaiya Ali</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:Inter,sans-serif;background:#08060f;color:#e2e8f0}.serif{font-family:'Playfair Display',serif}.glass{background:rgba(18,13,31,.88);border:1px solid rgba(168,85,247,.22);backdrop-filter:blur(12px)}
+    html[data-theme="light"] body{background:#fbf8ff;color:#392f46}html[data-theme="light"] .glass{background:rgba(255,255,255,.88);border-color:rgba(139,91,182,.22)}html[data-theme="light"] .heading{color:#352b40}html[data-theme="light"] .copy{color:#5d5368}
+  </style>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('portfolio-theme')||'light'}catch(_){}</script>
+</head>
+<body class="min-h-screen">
+  <header class="sticky top-0 z-10 border-b border-purple-900/40 bg-[#08060f]/90 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html#projects" class="flex items-center gap-3 text-sm font-semibold text-purple-300 hover:text-purple-200"><i class="fa-solid fa-arrow-left"></i> Back to projects</a>
+      <a href="index.html#home" class="text-sm font-bold text-white">Sumaiya Ali</a>
+    </div>
+  </header>
+  <main id="projectContent" class="max-w-5xl mx-auto px-6 py-12 sm:py-20"></main>
+  <script>
+    const projects = {
+      bookshelph: {
+        name: 'BookShelph', subtitle: 'Online Book Borrowing Platform', image: 'assets/bookshelph.svg', live: 'https://book-shelph-drux.vercel.app/', repo: 'https://github.com/sumaiya6722/BookShelph',
+        intro: 'BookShelph helps readers find books and request to borrow them through a focused discovery and request flow.',
+        features: ['Explore a home page with featured titles, a promotional banner, and reader testimonials.', 'Browse a catalog of 12 sample books, search by title, and filter by Science, Tech, or Story.', 'Open individual book detail pages.', 'Create an account or sign in with email and password or Google.', 'Edit the display name and profile image URL on the profile page.', 'Use responsive layouts and toast notifications throughout the experience.'],
+        flow: 'Browse the sample catalog, search or filter for a book, open its detail page, then use the borrow action.',
+        stack: ['Next.js 16 App Router', 'React 19', 'Better Auth with MongoDB', 'Tailwind CSS 4, DaisyUI, and HeroUI', 'react-hook-form for authentication forms'],
+        notes: ['The book catalog is sample data loaded from public/data.json.', 'The borrow button currently displays a success toast; it does not save a loan or update book availability.', 'Search currently matches book titles.'],
+        next: 'Persisting borrowing requests and availability would extend the current catalog demo into a complete loan workflow.'
+      },
+      keenfriends: {
+        name: 'KeenFriends', subtitle: 'A Social Platform for Connecting with Friends', image: 'assets/keenfriends.svg', live: 'https://keen-friends.vercel.app/', repo: 'https://github.com/sumaiya6722/KeenFriends',
+        intro: 'KeenFriends brings friend profiles, timelines, communication options, and activity statistics into one social experience.',
+        features: ['Browse friend cards with contact status and relationship goals.', 'Open profiles to view bios, tags, contact details, and the next due date.', 'Record a call, text, or video check-in from a friend’s profile.', 'Review check-ins in a filterable timeline.', 'See a Recharts breakdown of interactions by type.', 'Navigate between the Home, Timeline, and Stats areas in a responsive layout.'],
+        flow: 'Choose a friend, review their profile and contact goal, record a check-in, then review the interaction in the timeline or stats view.',
+        stack: ['Next.js 16 App Router', 'React 19', 'Tailwind CSS 4 and DaisyUI', 'HeroUI components', 'Recharts for analytics', 'React Toastify for check-in feedback'],
+        notes: ['Friend records come from public/data.json.', 'Check-ins are kept in React context in the browser session and reset when the page is refreshed; they are not saved to a database.', 'The home page summary figures are static sample values.'],
+        next: 'Saving check-ins between visits and adding privacy controls would help make the tracker more persistent and personal.'
+      },
+      lifecoach: {
+        name: 'LifeCoach', subtitle: 'Learning & Lesson Platform', image: 'assets/lifecoach.svg', live: 'https://lifecoach-client.vercel.app/', repo: 'https://github.com/sumaiya6722/lifecoach-client',
+        intro: 'LifeCoach is a learning platform for discovering lessons, sharing content, and interacting with a learning community.',
+        features: ['Register and sign in with email/password or Google.', 'Explore featured and most-saved lessons, plus a weekly contributor leaderboard.', 'Create, edit, and view lesson pages; like, favorite, comment on, or report lessons.', 'Manage lessons and profile details through the user dashboard.', 'Use an admin dashboard to manage users, lessons, and reported lessons.', 'Explore Free and Premium plans with a Stripe Checkout subscription flow.', 'Switch between light and dark themes; receive toast notifications.'],
+        flow: 'Discover a lesson, interact with it or publish your own, then use dashboards to manage learning content and community activity.',
+        stack: ['Next.js 16 App Router and React 19', 'JavaScript and TypeScript', 'Tailwind CSS 4, DaisyUI, and HeroUI styles', 'Better Auth with MongoDB and JWT support', 'Stripe for subscriptions'],
+        notes: ['This repository contains the web client and a few authentication and checkout routes; lesson, profile, dashboard, and admin data are supplied by a separate LifeCoach API server.', 'The pricing page currently uses placeholder login and Premium state values; displayed access state should not be treated as connected to a user’s actual plan.'],
+        next: 'Connecting the pricing page to the signed-in user’s persisted subscription state and adding lesson progress history could make the experience more complete.'
+      },
+      studynook: {
+        name: 'StudyNook', subtitle: 'Study Room Booking Platform', image: 'assets/studynook.svg', live: 'https://studynook-client-h1vd.vercel.app/', repo: 'https://github.com/sumaiya6722/studynook-client',
+        intro: 'StudyNook helps people discover study rooms, compare room details, and manage reservations. It also includes administrative tools for rooms and platform features.',
+        features: ['Browse the latest rooms and view room detail pages.', 'Search by room name and filter by amenity or maximum hourly rate.', 'Create, edit, and delete room listings.', 'Book a room by date and time, see the calculated cost, and cancel a booking.', 'Sign up or log in with email/password or Google.', 'Switch between light and dark themes.'],
+        flow: 'Find a room using search or filters, review its details, choose a date and time, then review the calculated booking cost. Bookings can be viewed and cancelled from the bookings area.',
+        stack: ['Next.js App Router', 'React', 'TypeScript and JavaScript', 'Tailwind CSS, HeroUI, and DaisyUI', 'Better Auth with MongoDB', 'Companion Express API for room and booking operations'],
+        notes: ['This repository is the frontend; room and booking data are served by a separate Express API.', 'Protected pages and booking/listing actions depend on the authentication setup and the API being available.'],
+        next: 'An availability calendar and booking reminders could make room planning easier.'
+      }
+    };
+    const project = projects[new URLSearchParams(location.search).get('project')];
+    const main = document.getElementById('projectContent');
+    if (!project) {
+      document.title = 'Project not found | Sumaiya Ali';
+      main.innerHTML = '<section class="glass rounded-3xl p-8"><h1 class="heading text-3xl font-bold">Project not found</h1><p class="copy mt-3">Choose a project from the portfolio to view its details.</p><a class="inline-block mt-6 text-purple-400 underline" href="index.html#projects">Return to projects</a></section>';
+    } else {
+      document.title = `${project.name} | Project details | Sumaiya Ali`;
+      main.innerHTML = `
+        <article>
+          <p class="text-xs uppercase tracking-[.2em] text-purple-400 font-semibold">Project details</p>
+          <h1 class="heading serif mt-3 text-5xl sm:text-7xl font-semibold">${project.name}</h1>
+          <p class="copy mt-3 text-xl">${project.subtitle}</p>
+          <img class="glass mt-10 w-full rounded-3xl object-cover" src="${project.image}" alt="${project.name} project interface illustration">
+          <div class="grid md:grid-cols-3 gap-5 mt-8">
+            <a class="glass rounded-2xl p-5 text-purple-300 hover:border-purple-400" href="${project.live}" target="_blank" rel="noopener noreferrer"><span class="block text-xs uppercase tracking-wider text-slate-400">Live demo</span><span class="block mt-2 font-semibold">View live project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></span></a>
+            <a class="glass rounded-2xl p-5 text-purple-300 hover:border-purple-400" href="${project.repo}" target="_blank" rel="noopener noreferrer"><span class="block text-xs uppercase tracking-wider text-slate-400">Source code</span><span class="block mt-2 font-semibold">View GitHub repository <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></span></a>
+            <div class="glass rounded-2xl p-5"><span class="block text-xs uppercase tracking-wider text-slate-400">Project</span><span class="heading block mt-2 font-semibold">${project.name}</span></div>
+          </div>
+          <section class="glass rounded-3xl p-7 sm:p-10 mt-8"><h2 class="heading serif text-3xl font-semibold">Overview</h2><p class="copy mt-4 leading-7">${project.intro}</p></section>
+          <section class="glass rounded-3xl p-7 sm:p-10 mt-5"><h2 class="heading serif text-3xl font-semibold">Key features</h2><ul class="copy mt-5 list-disc pl-6 space-y-3 leading-7">${project.features.map(feature => `<li>${feature}</li>`).join('')}</ul></section>
+          <section class="glass rounded-3xl p-7 sm:p-10 mt-5"><h2 class="heading serif text-3xl font-semibold">Technology</h2><ul class="copy mt-5 list-disc pl-6 space-y-3 leading-7">${project.stack.map(item => `<li>${item}</li>`).join('')}</ul></section>
+          <section class="glass rounded-3xl p-7 sm:p-10 mt-5"><h2 class="heading serif text-3xl font-semibold">Implementation notes</h2><ul class="copy mt-5 list-disc pl-6 space-y-3 leading-7">${project.notes.map(note => `<li>${note}</li>`).join('')}</ul></section>
+          <section class="grid md:grid-cols-2 gap-5 mt-5">
+            <div class="glass rounded-3xl p-7"><h2 class="heading text-xl font-bold">Typical flow</h2><p class="copy mt-3 leading-7">${project.flow}</p></div>
+            <div class="glass rounded-3xl p-7"><h2 class="heading text-xl font-bold">Future opportunities</h2><p class="copy mt-3 leading-7">${project.next}</p></div>
+          </section>
+          <a href="index.html#projects" class="inline-flex mt-8 items-center gap-2 text-purple-300 hover:underline"><i class="fa-solid fa-arrow-left"></i> Back to all projects</a>
+        </article>`;
+    }
+  </script>
+</body>
+</html>
