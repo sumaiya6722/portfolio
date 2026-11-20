@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,155 @@
   <title>Project details | Sumaiya Ali</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
-    body{font-family:Inter,sans-serif;background:#08060f;color:#e2e8f0}.serif{font-family:'Playfair Display',serif}.glass{background:rgba(18,13,31,.88);border:1px solid rgba(168,85,247,.22);backdrop-filter:blur(12px)}
-    html[data-theme="light"] body{background:#fbf8ff;color:#392f46}html[data-theme="light"] .glass{background:rgba(255,255,255,.88);border-color:rgba(139,91,182,.22)}html[data-theme="light"] .heading{color:#352b40}html[data-theme="light"] .copy{color:#5d5368}
+    body {
+      font-family: Inter, sans-serif;
+      background: #08060f;
+      color: #e2e8f0
+    }
+
+    .serif {
+      font-family: 'Playfair Display', serif
+    }
+
+    .glass {
+      background: rgba(18, 13, 31, .88);
+      border: 1px solid rgba(168, 85, 247, .22);
+      backdrop-filter: blur(12px)
+    }
+
+    html[data-theme="light"] body {
+      background: #fbf8ff;
+      color: #392f46
+    }
+
+    html[data-theme="light"] .glass {
+      background: rgba(255, 255, 255, .88);
+      border-color: rgba(139, 91, 182, .22)
+    }
+
+    html[data-theme="light"] .heading {
+      color: #352b40
+    }
+
+    html[data-theme="light"] .copy {
+      color: #5d5368
+    }
   </style>
-  <script>try{document.documentElement.dataset.theme=localStorage.getItem('portfolio-theme')||'light'}catch(_){}</script>
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'light' } catch (_) { }</script>
 </head>
+
 <body class="min-h-screen">
   <header class="sticky top-0 z-10 border-b border-purple-900/40 bg-[#08060f]/90 backdrop-blur-md">
     <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="index.html#projects" class="flex items-center gap-3 text-sm font-semibold text-purple-300 hover:text-purple-200"><i class="fa-solid fa-arrow-left"></i> Back to projects</a>
+      <a href="index.html#projects"
+        class="flex items-center gap-3 text-sm font-semibold text-purple-300 hover:text-purple-200"><i
+          class="fa-solid fa-arrow-left"></i> Back to projects</a>
       <a href="index.html#home" class="text-sm font-bold text-white">Sumaiya Ali</a>
     </div>
   </header>
   <main id="projectContent" class="max-w-5xl mx-auto px-6 py-12 sm:py-20"></main>
   <script>
     const projects = {
+
+      leebazz: {
+        name: 'Leebazz', subtitle: 'A Social Platform for Connecting with Friends', image: 'assets/keenfriends.svg', live: 'https://leebazz-client.vercel.app/', repo: 'https://github.com/sumaiya6722/leebazz-client',
+        intro: 'An e-commerce storefront for a clothing brand, featuring product listings, shopping cart functionality and secure checkout process with role based access control and WCAG accessibility.',
+        features: [
+          'Browse products across Women, Men, Kids, Decor, Jewellery, and Skincare categories.',
+          'Explore product listings with category-based navigation and product information.',
+          'View individual product details, including descriptions, pricing, available options, and images.',
+          'Search and filter products to discover relevant items.',
+          'Manage shopping cart items and review selected products before checkout.',
+          'Add products to a personal wishlist for future purchases.',
+          'Register and log in using the authentication system.',
+          'Access account-related shopping features through authenticated sessions.',
+          'Enjoy a responsive shopping experience across desktop and mobile devices.'
+        ],
+        flow: 'Customers browse the storefront, explore product categories, view product details, add products to their cart or wishlist, authenticate when required, and proceed through the shopping process.',
+
+        stack: [
+          'Next.js and React',
+          'JavaScript and JSX',
+          'Tailwind CSS',
+          'Node.js',
+          'Express.js',
+          'MongoDB and Mongoose',
+          'Better Auth for authentication',
+          'REST APIs for frontend-backend communication'
+        ],
+        notes: [
+          'The platform uses a product catalog containing demo products across six major shopping categories.',
+          'MongoDB is used for backend data storage, including shopping cart and wishlist collections.',
+          'Better Auth manages user authentication and session handling.',
+          'The frontend and backend are deployed separately.',
+          'Online payment integration and additional administrative capabilities are part of the planned development roadmap.'
+        ],
+        next: ['Expand the administrative product-management system, complete online payment integration, improve inventory management, and introduce additional customer shopping and order-management features.']
+      },
+
+
+      datascope: {
+        name: 'DataScope',
+        subtitle: 'An Enterprise Data Discovery & Intelligence Platform',
+        image: 'assets/lifecoach.svg',
+        live: 'https://datascope-frontend-five.vercel.app/',
+        repo: 'https://github.com/sumaiya6722/datascope-frontend',
+
+        intro: 'A full-stack data discovery and intelligence platform designed to help users explore datasets, search and analyze records, manage data access, and gain insights through interactive analytics.',
+
+        features: [
+          'Explore available datasets and inspect their metadata and field definitions.',
+          'Create and manage datasets with configurable field properties.',
+          'Search records using partial, exact, and MongoDB text search modes.',
+          'Filter records using field-based conditions and configurable operators.',
+          'Sort records by multiple fields and navigate results through pagination.',
+          'Save frequently used search configurations as reusable views.',
+          'Track previous searches through search history.',
+          'Manage user roles, dataset permissions, and access privileges.',
+          'Export permitted dataset records as CSV files.',
+          'Explore dataset statistics and activity through analytics dashboards.'
+        ],
+
+        flow: 'Users authenticate and enter the workspace, select a dataset, configure search terms and filters, explore paginated records, save useful search views, and access analytics or export features according to their permissions.',
+
+        stack: [
+          'Next.js 16 App Router',
+          'React 19',
+          'Tailwind CSS 4',
+          'Redux Toolkit',
+          'RTK Query',
+          'Node.js',
+          'Express.js',
+          'MongoDB and Mongoose',
+          'Better Auth for authentication',
+          'Recharts for data visualization'
+        ],
+
+        notes: [
+          'The frontend and backend are maintained as separate applications.',
+          'MongoDB stores datasets, field definitions, records, permissions, saved views, and search history.',
+          'Mongoose provides application-level models and database interaction.',
+          'Better Auth handles authentication and session management.',
+          'RTK Query manages API requests, caching, and cache invalidation.',
+          'The backend enforces role-based permissions and dataset-level access controls.',
+          'Search supports partial matching, exact matching, MongoDB text search, filtering, sorting, and pagination.',
+          'Some defined models, including record history, record relationships, and user preferences, do not yet have active API functionality.',
+          'The current implementation uses MongoDB and Mongoose; PostgreSQL and Drizzle are not implemented.'
+        ],
+
+        next: [
+          'Align the database architecture with the PostgreSQL and Drizzle requirement if required by the project specification.',
+          'Improve search performance and evaluate indexing strategies for larger datasets.',
+          'Implement record history, record relationships, and user preference APIs.',
+          'Introduce optimized table rendering and more scalable pagination strategies.',
+          'Expand automated testing and conduct measurable performance benchmarks.'
+        ]
+      },
+
       bookshelph: {
         name: 'BookShelph', subtitle: 'Online Book Borrowing Platform', image: 'assets/bookshelph.svg', live: 'https://book-shelph-drux.vercel.app/', repo: 'https://github.com/sumaiya6722/BookShelph',
         intro: 'BookShelph helps readers find books and request to borrow them through a focused discovery and request flow.',
@@ -33,6 +166,7 @@
         notes: ['The book catalog is sample data loaded from public/data.json.', 'The borrow button currently displays a success toast; it does not save a loan or update book availability.', 'Search currently matches book titles.'],
         next: 'Persisting borrowing requests and availability would extend the current catalog demo into a complete loan workflow.'
       },
+
       keenfriends: {
         name: 'KeenFriends', subtitle: 'A Social Platform for Connecting with Friends', image: 'assets/keenfriends.svg', live: 'https://keen-friends.vercel.app/', repo: 'https://github.com/sumaiya6722/KeenFriends',
         intro: 'KeenFriends brings friend profiles, timelines, communication options, and activity statistics into one social experience.',
@@ -92,4 +226,5 @@
     }
   </script>
 </body>
+
 </html>
